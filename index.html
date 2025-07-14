@@ -115,6 +115,17 @@
             color: var(--elegant-gold);
         }
     </style>
+    <style>
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .floating {
+    animation: float 3s ease-in-out infinite;
+  }
+</style>
 </head>
 <body class="dark-mode">
     <!-- Header -->
@@ -205,17 +216,17 @@
 
     <!-- Social Proof -->
     <section class="py-12 bg-opacity-50 dark:bg-[#1A1A1A] light:bg-[#F8F8F8]">
-        <div class="container mx-auto px-6">
-            <p class="text-center gray-text mb-8">Marcas que já confiaram em meu trabalho:</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-                <img src="./imagens/transfuturo.jpg" alt="Nails Design" class="h-12 dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300">
-                <img src="./imagens/labelle.jpg" alt="Lash Studio" class="h-12 dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300">
-                <img src="./imagens/postobarramansa.jpg" alt="Transportes" class="h-12 dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300">
-                <img src="./imagens/renascer.jpg" alt="Comércio" class="h-12 dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300">
-                <img src="./imagens/coliseu.jpg" alt="Restaurante" class="h-12 dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300">
-            </div>
-        </div>
-    </section>
+  <div class="container mx-auto px-6">
+    <p class="text-center gray-text mb-8">Marcas que já confiaram em meu trabalho:</p>
+    <div class="flex flex-wrap justify-center items-center gap-8">
+      <img src="./imagens/transfuturo.jpg" alt="Nails Design" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300 floating">
+      <img src="./imagens/labelle.jpg" alt="Lash Studio" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300 floating">
+      <img src="./imagens/postobarramansa.jpg" alt="Transportes" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300 floating">
+      <img src="./imagens/renascer.jpg" alt="Comércio" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300 floating">
+      <img src="./imagens/coliseu.jpg" alt="Restaurante" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300 floating">
+    </div>
+  </div>
+</section>
 
     <!-- About Me -->
     <section class="py-20 px-6">
