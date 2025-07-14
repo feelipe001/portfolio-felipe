@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Felipe Ribeiro | Web Design, Fotos Realistas com IA e Conteúdo Digital</title>
+    <meta name="description" content="Conheça o trabalho sofisticado de Felipe Ribeiro: web design premium, ensaios fotográficos IA hiper-realistas e conteúdo digital exclusivo para marcas que querem se destacar.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-black: #0E0E0E;
+            --snow-white: #FFFFFF;
+            --elegant-gold: #C8A94D;
+            --luxury-gray: #8C8C8C;
+            --light-nude: #F2E8DC;
+        }
+        
+        body {
+            font-family: 'Lora', serif;
+            transition: all 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .dark-mode {
+            background-color: var(--deep-black);
+            color: var(--snow-white);
+        }
+        
+        .light-mode {
+            background-color: var(--snow-white);
+            color: var(--deep-black);
+        }
+        
+        .gold-text {
+            color: var(--elegant-gold);
+        }
+        
+        .gold-border {
+            border-color: var(--elegant-gold);
+        }
+        
+        .gold-bg {
+            background-color: var(--elegant-gold);
+        }
+        
+        .nude-bg {
+            background-color: var(--light-nude);
+        }
+        
+        .gray-text {
+            color: var(--luxury-gray);
+        }
+        
+        .portfolio-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .icon-hover:hover {
+            color: var(--elegant-gold);
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hover:hover {
+            background-color: transparent;
+            color: var(--elegant-gold);
+            border-color: var(--elegant-gold);
+            transform: translateY(-2px);
+        }
+        
+        .gold-btn-hover:hover {
+            background-color: var(--deep-black);
+            color: var(--elegant-gold);
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-opacity-90 backdrop-blur-sm dark:bg-[#0E0E0E] light:bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold gold-text">Felipe Ribeiro</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-white hover:text-[#C8A94D] transition duration-300">Início</a>
+                    <a href="#portfolio" class="text-white hover:text-[#C8A94D] transition duration-300">Portfólio</a>
+                    <a href="#blog" class="text-white hover:text-[#C8A94D] transition duration-300">Blog</a>
+                    <a href="#shop" class="text-white hover:text-[#C8A94D] transition duration-300">Loja Digital</a>
+                    <a href="#contact" class="text-white hover:text-[#C8A94D] transition duration-300">Contato</a>
+                    
+                    <!-- Dark/Light Mode Toggle -->
+                    <button id="theme-toggle" class="text-white hover:text-[#C8A94D] focus:outline-none">
+                        <i class="fas fa-moon text-xl"></i>
+                    </button>
+                    
+                    <!-- WhatsApp Button -->
+                    <a href="https://wa.me/SEUNUMERO" class="btn bg-[#C8A94D] text-black px-6 py-2 rounded-full hover:bg-transparent hover:text-[#C8A94D] hover:border-[#C8A94D] border border-transparent transition duration-300">
+                        Fale comigo no WhatsApp
+                    </a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-white hover:text-[#C8A94D]">Início</a>
+                <a href="#portfolio" class="block py-2 text-white hover:text-[#C8A94D]">Portfólio</a>
+                <a href="#blog" class="block py-2 text-white hover:text-[#C8A94D]">Blog</a>
+                <a href="#shop" class="block py-2 text-white hover:text-[#C8A94D]">Loja Digital</a>
+                <a href="#contact" class="block py-2 text-white hover:text-[#C8A94D]">Contato</a>
+                
+                <div class="mt-4 flex items-center justify-between">
+                    <button id="mobile-theme-toggle" class="text-white hover:text-[#C8A94D] focus:outline-none">
+                        <i class="fas fa-moon text-xl"></i>
+                    </button>
+                    
+                    <a href="https://wa.me/SEUNUMERO" class="btn bg-[#C8A94D] text-black px-4 py-1 rounded-full hover:bg-transparent hover:text-[#C8A94D] hover:border-[#C8A94D] border border-transparent transition duration-300 text-sm">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6 fade-in">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 slide-up">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Transformo <span class="gold-text">criatividade</span> em experiências digitais impactantes.
+                    </h1>
+                    <p class="text-xl mb-8 gray-text">
+                        Web Design de alto nível, fotografias realistas com IA e criações digitais para destacar sua marca.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#portfolio" class="btn gold-bg text-black px-8 py-3 rounded-full hover:bg-transparent hover:text-[#C8A94D] hover:border-[#C8A94D] border border-transparent transition duration-300 text-center">
+                            Veja meu Portfólio
+                        </a>
+                        <a href="https://wa.me/SEUNUMERO" class="btn border border-[#C8A94D] text-[#C8A94D] px-8 py-3 rounded-full hover:bg-[#C8A94D] hover:text-black transition duration-300 text-center">
+                            Fale comigo no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 slide-up">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
+                         alt="Design Digital" 
+                         class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-12 bg-opacity-50 dark:bg-[#1A1A1A] light:bg-[#F8F8F8]">
+        <div class="container mx-auto px-6">
+            <p class="text-center gray-text mb-8">Marcas que já confiaram em meu trabalho:</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <img src="https://via.placeholder.com/120x60?text=Nails+Design" alt="Nails Design" class="h-12 dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300">
+                <img src="https://via.placeholder.com/120x60?text=Lash+Studio" alt="Lash Studio" class="h-12 dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300">
+                <img src="https://via.placeholder.com/120x60?text=Transportes" alt="Transportes" class="h-12 dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300">
+                <img src="https://via.placeholder.com/120x60?text=Comércio" alt="Comércio" class="h-12 dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300">
+                <img src="https://via.placeholder.com/120x60?text=Restaurante" alt="Restaurante" class="h-12 dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-12 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                             alt="Felipe Ribeiro" 
+                             class="rounded-full w-64 h-64 object-cover border-4 border-[#C8A94D] shadow-lg">
+                        <div class="absolute -bottom-3 -right-3 bg-[#C8A94D] text-black px-4 py-2 rounded-full font-bold">
+                            <i class="fas fa-check mr-2"></i> Online
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-16">
+                    <h2 class="text-3xl font-bold mb-6 gold-text">Quem Sou Eu</h2>
+                    <p class="text-lg mb-6">
+                        Sou Felipe Ribeiro, web designer apaixonado por criar experiências digitais sofisticadas, fotos hiper-realistas com Inteligência Artificial e soluções criativas que elevam marcas a outro patamar. Meu trabalho é unir design, tecnologia e estratégia para ajudar você a se destacar no mundo digital.
+                    </p>
+                    <p class="text-lg mb-6">
+                        Sempre fui apaixonado por unir tecnologia e estética. No design, vejo não apenas formas e cores, mas estratégias capazes de emocionar e vender. A inteligência artificial me abriu portas para criar imagens que não existem — mas que parecem tão reais quanto qualquer fotografia.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#portfolio" class="btn gold-bg text-black px-6 py-2 rounded-full hover:bg-transparent hover:text-[#C8A94D] hover:border-[#C8A94D] border border-transparent transition duration-300">
+                            Meu Trabalho
+                        </a>
+                        <a href="#contact" class="btn border border-[#C8A94D] text-[#C8A94D] px-6 py-2 rounded-full hover:bg-[#C8A94D] hover:text-black transition duration-300">
+                            Contato
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-20 px-6 bg-opacity-50 dark:bg-[#1A1A1A] light:bg-[#F8F8F8]">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-16 text-center gold-text">Meus Serviços</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-opacity-50 dark:bg-[#0E0E0E] light:bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300 portfolio-item">
+                    <div class="text-4xl mb-6 gold-text">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Web Design</h3>
+                    <p class="gray-text mb-6">
+                        Sites e páginas de vendas exclusivos, com foco em conversão e design de alto impacto.
+                    </p>
+                    <a href="#portfolio" class="inline-block border-b border-[#C8A94D] text-[#C8A94D] hover:text-white hover:border-white transition duration-300">
+                        Ver Portfólio <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-opacity-50 dark:bg-[#0E0E0E] light:bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300 portfolio-item">
+                    <div class="text-4xl mb-6 gold-text">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Fotos Realistas com IA</h3>
+                    <p class="gray-text mb-6">
+                        Ensaios fotográficos hiper-realistas gerados por inteligência artificial, perfeitos para redes sociais e campanhas.
+                    </p>
+                    <a href="#portfolio" class="inline-block border-b border-[#C8A94D] text-[#C8A94D] hover:text-white hover:border-white transition duration-300">
+                        Saiba Mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-opacity-50 dark:bg-[#0E0E0E] light:bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition duration-300 portfolio-item">
+                    <div class="text-4xl mb-6 gold-text">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Criação de Conteúdo Digital</h3>
+                    <p class="gray-text mb-6">
+                        Artes, posts e materiais digitais que elevam sua presença online.
+                    </p>
+                    <a href="#portfolio" class="inline-block border-b border-[#C8A94D] text-[#C8A94D] hover:text-white hover:border-white transition duration-300">
+                        Ver Exemplos <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strong CTA -->
+    <section class="py-20 px-6 nude-bg dark:text-black">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Pronto para transformar sua marca? Vamos conversar!</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Entre em contato hoje mesmo e descubra como posso ajudar a elevar sua presença digital.
+            </p>
+            <a href="https://wa.me/SEUNUMERO" class="btn gold-bg text-black px-8 py-3 rounded-full hover:bg-transparent hover:text-black hover:border-black border border-transparent transition duration-300 inline-block">
+                Me Chame no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-16 text-center gold-text">Portfólio</h2>
+            
+            <!-- Portfolio Filter -->
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button data-filter="all" class="px-4 py-2 border border-[#C8A94D] rounded-l-lg hover:bg-[#C8A94D] hover:text-black transition duration-300 active-filter">
+                        Todos
+                    </button>
+                    <button data-filter="web" class="px-4 py-2 border-t border-b border-[#C8A94D] hover:bg-[#C8A94D] hover:text-black transition duration-300">
+                        Web Design
+                    </button>
+                    <button data-filter="photo" class="px-4 py-2 border-t border-b border-[#C8A94D] hover:bg-[#C8A94D] hover:text-black transition duration-300">
+                        Fotos IA
+                    </button>
+                    <button data-filter="content" class="px-4 py-2 border border-[#C8A94D] rounded-r-lg hover:bg-[#C8A94D] hover:text-black transition duration-300">
+                        Conteúdo
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item web" data-category="web">
+                    <div class="bg-opacity-50 dark:bg-[#1A1A1A] light:bg-white rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" 
+                             alt="Website Design" 
+                             class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Site para Lash Designer</h3>
+                            <p class="gray-text mb-4">Design sofisticado para estúdio de extensão de cílios.</p>
+                            <button class="view-details-btn btn border border-[#C8A94D] text-[#C8A94D] px-4 py-2 rounded-full hover:bg-[#C8A94D] hover:text-black transition duration-300" 
+                                    data-title="Site para Lash Designer" 
+                                    data-description="Desenvolvimento completo de website para estúdio de extensão de cílios premium, com design sofisticado, galeria de trabalhos e agendamento online."
+                                    data-image="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80">
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item photo" data-category="photo">
+                    <div class="bg-opacity-50 dark:bg-[#1A1A1A] light:bg-white rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1682686580391-615b3f7069ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="AI Photo" 
+                             class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Ensaio Fotográfico IA</h3>
+                            <p class="gray-text mb-4">Série de fotos realistas geradas por inteligência artificial.</p>
+                            <button class="view-details-btn btn border border-[#C8A94D] text-[#C8A94D] px-4 py-2 rounded-full hover:bg-[#C8A94D] hover:text-black transition duration-300"
+                                    data-title="Ensaio Fotográfico IA" 
+                                    data-description="Série de 20 imagens hiper-realistas geradas por IA para campanha de moda, com diferentes cenários e estilos."
+                                    data-image="https://images.unsplash.com/photo-1682686580391-615b3f7069ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80">
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item content" data-category="content">
+                    <div class="bg-opacity-50 dark:bg-[#1A1A1A] light:bg-white rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                             alt="Digital Content" 
+                             class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Conteúdo para Redes Sociais</h3>
+                            <p class="gray-text mb-4">Série de posts para marca de cosméticos.</p>
+                            <button class="view-details-btn btn border border-[#C8A94D] text-[#C8A94D] px-4 py-2 rounded-full hover:bg-[#C8A94D] hover:text-black transition duration-300"
+                                    data-title="Conteúdo para Redes Sociais" 
+                                    data-description="Criação de 30 posts para Instagram e Facebook para marca de cosméticos naturais, incluindo artes, textos e estratégia de publicação."
+                                    data-image="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80">
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item web" data-category="web">
+                    <div class="bg-opacity-50 dark:bg-[#1A1A1A] light:bg-white rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                             alt="E-commerce" 
+                             class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Loja Virtual para Transportadora</h3>
+                            <p class="gray-text mb-4">E-commerce completo para serviços logísticos.</p>
+                            <button class="view-details-btn btn border border-[#C8A94D] text-[#C8A94D] px-4 py-2 rounded-full hover:bg-[#C8A94D] hover:text-black transition duration-300"
+                                    data-title="Loja Virtual para Transportadora" 
+                                    data-description="Desenvolvimento de e-commerce completo para empresa de transportes, com integração de pagamentos, rastreamento de encomendas e área do cliente."
+                                    data-image="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80">
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item photo" data-category="photo">
+                    <div class="bg-opacity-50 dark:bg-[#1A1A1A] light:bg-white rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1682686580391-615b3f7069ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="AI Product Photos" 
+                             class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Fotos de Produtos IA</h3>
+                            <p class="gray-text mb-4">Imagens profissionais para catálogo digital.</p>
+                            <button class="view-details-btn btn border border-[#C8A94D] text-[#C8A94D] px-4 py-2 rounded-full hover:bg-[#C8A94D] hover:text-black transition duration-300"
+                                    data-title="Fotos de Produtos IA" 
+                                    data-description="Geração de 50 imagens de produtos para e-commerce usando IA, com diferentes ângulos, fundos e estilos para destacar cada item."
+                                    data-image="https://images.unsplash.com/photo-1682686580391-615b3f7069ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80">
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item content" data-category="content">
+                    <div class="bg-opacity-50 dark:bg-[#1A1A1A] light:bg-white rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                             alt="Social Media Kit" 
+                             class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Kit para Redes Sociais</h3>
+                            <p class="gray-text mb-4">Templates editáveis para Instagram.</p>
+                            <button class="view-details-btn btn border border-[#C8A94D] text-[#C8A94D] px-4 py-2 rounded-full hover:bg-[#C8A94D] hover:text-black transition duration-300"
+                                    data-title="Kit para Redes Sociais" 
+                                    data-description="Criação de kit completo com 50 templates editáveis para Instagram Stories e Posts, incluindo temas sazonais e promocionais."
+                                    data-image="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80">
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="btn gold-bg text-black px-8 py-3 rounded-full hover:bg-transparent hover:text-[#C8A94D] hover:border-[#C8A94D] border border-transparent transition duration-300 inline-block">
+                    Ver Mais Projetos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="py-20 px-6 bg-opacity-50 dark:bg-[#1A1A1A] light:bg-[#F8F8F8]">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-16 text-center gold-text">Blog</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-opacity-50 dark:bg-[#0E0E0E] light:bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Design Sofisticado" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm gray-text">15 Jun 2023</span>
+                            <span class="text-sm gold-text">Web Design</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Como o Design Sofisticado Atrai Clientes Premium</h3>
+                        <p class="gray-text mb-4">
+                            Descubra como um design cuidadosamente elaborado pode posicionar sua marca como premium e atrair o público certo.
+                        </p>
+                        <a href="#" class="inline-block border-b border-[#C8A94D] text-[#C8A94D] hover:text-white hover:border-white transition duration-300">
+                            Ler Artigo <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-opacity-50 dark:bg-[#0E0E0E] light:bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="IA Fotografia" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm gray-text">02 Jul 2023</span>
+                            <span class="text-sm gold-text">Fotografia IA</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Fotos Realistas com IA: Tendência ou Revolução?</h3>
+                        <p class="gray-text mb-4">
+                            Explore o potencial da inteligência artificial na criação de imagens fotográficas e como isso está transformando o mercado.
+                        </p>
+                        <a href="#" class="inline-block border-b border-[#C8A94D] text-[#C8A94D] hover:text-white hover:border-white transition duration-300">
+                            Ler Artigo <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-opacity-50 dark:bg-[#0E0E0E] light:bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Conversão Sites" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm gray-text">18 Ago 2023</span>
+                            <span class="text-sm gold-text">Marketing Digital</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Dicas para Sites com Alta Conversão</h3>
+                        <p class="gray-text mb-4">
+                            Conheça as estratégias de design e usabilidade que podem transformar visitantes em clientes no seu website.
+                        </p>
+                        <a href="#" class="inline-block border-b border-[#C8A94D] text-[#C8A94D] hover:text-white hover:border-white transition duration-300">
+                            Ler Artigo <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="btn border border-[#C8A94D] text-[#C8A94D] px-8 py-3 rounded-full hover:bg-[#C8A94D] hover:text-black transition duration-300 inline-block">
+                    Ver Todos os Artigos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Shop -->
+    <section id="shop" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-16 text-center gold-text">Loja Digital</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-opacity-50 dark:bg-[#1A1A1A] light:bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1682686580391-615b3f7069ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Pacote Fotos IA" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Pacote Fotos IA Premium</h3>
+                        <p class="gray-text mb-4">
+                            Coleção de 50 imagens hiper-realistas geradas por IA para uso comercial.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold">R$ 149,90</span>
+                            <button class="btn gold-bg text-black px-4 py-2 rounded-full hover:bg-transparent hover:text-[#C8A94D] hover:border-[#C8A94D] border border-transparent transition duration-300">
+                                Comprar Agora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-opacity-50 dark:bg-[#1A1A1A] light:bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                         alt="Templates Instagram" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Templates para Instagram</h3>
+                        <p class="gray-text mb-4">
+                            Kit com 30 templates editáveis para Stories e Posts profissionais.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold">R$ 99,90</span>
+                            <button class="btn gold-bg text-black px-4 py-2 rounded-full hover:bg-transparent hover:text-[#C8A94D] hover:border-[#C8A94D] border border-transparent transition duration-300">
+                                Comprar Agora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-opacity-50 dark:bg-[#1A1A1A] light:bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                         alt="Template Site" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Template Site Elegante</h3>
+                        <p class="gray-text mb-4">
+                            Template HTML/CSS premium para site institucional ou portfólio.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold">R$ 199,90</span>
+                            <button class="btn gold-bg text-black px-4 py-2 rounded-full hover:bg-transparent hover:text-[#C8A94D] hover:border-[#C8A94D] border border-transparent transition duration-300">
+                                Comprar Agora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="btn border border-[#C8A94D] text-[#C8A94D] px-8 py-3 rounded-full hover:bg-[#C8A94D] hover:text-black transition duration-300 inline-block">
+                    Ver Todos os Produtos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 px-6 bg-opacity-50 dark:bg-[#1A1A1A] light:bg-[#F8F8F8]">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl font-bold mb-6 gold-text">Entre em Contato</h2>
+                    <p class="text-lg mb-8">
+                        Tem um projeto em mente ou quer saber mais sobre meus serviços? Preencha o formulário ao lado ou me chame diretamente no WhatsApp.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4 gold-text">Informações</h3>
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-envelope text-[#C8A94D] mt-1 mr-4"></i>
+                            <span>contato@felibereiro.com</span>
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-phone-alt text-[#C8A94D] mt-1 mr-4"></i>
+                            <span>+55 (11) 98765-4321</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-[#C8A94D] mt-1 mr-4"></i>
+                            <span>São Paulo, Brasil</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 gold-text">Redes Sociais</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-2xl text-white hover:text-[#C8A94D] transition duration-300 icon-hover">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-2xl text-white hover:text-[#C8A94D] transition duration-300 icon-hover">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                            <a href="#" class="text-2xl text-white hover:text-[#C8A94D] transition duration-300 icon-hover">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                            <a href="#" class="text-2xl text-white hover:text-[#C8A94D] transition duration-300 icon-hover">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form class="bg-opacity-50 dark:bg-[#0E0E0E] light:bg-white rounded-xl p-8 shadow-lg">
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2">Nome</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 rounded-lg bg-opacity-10 dark:bg-white light:bg-[#F8F8F8] border border-[#8C8C8C] focus:border-[#C8A94D] focus:outline-none transition duration-300">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2">E-mail</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 rounded-lg bg-opacity-10 dark:bg-white light:bg-[#F8F8F8] border border-[#8C8C8C] focus:border-[#C8A94D] focus:outline-none transition duration-300">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2">Mensagem</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 rounded-lg bg-opacity-10 dark:bg-white light:bg-[#F8F8F8] border border-[#8C8C8C] focus:border-[#C8A94D] focus:outline-none transition duration-300"></textarea>
+                        </div>
+                        <button type="submit" class="btn gold-bg text-black px-8 py-3 rounded-full hover:bg-transparent hover:text-[#C8A94D] hover:border-[#C8A94D] border border-transparent transition duration-300 w-full">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/SEUNUMERO" class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:bg-[#128C7E] transition duration-300 z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-[#0E0E0E] text-white">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4 gold-text">Felipe Ribeiro</h3>
+                    <p class="mb-4 max-w-md">
+                        Transformando ideias em experiências digitais sofisticadas através de web design, fotos realistas com IA e conteúdo criativo.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-xl text-white hover:text-[#C8A94D] transition duration-300 icon-hover">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-xl text-white hover:text-[#C8A94D] transition duration-300 icon-hover">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="#" class="text-xl text-white hover:text-[#C8A94D] transition duration-300 icon-hover">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                        <a href="#" class="text-xl text-white hover:text-[#C8A94D] transition duration-300 icon-hover">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 gold-text">Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="hover:text-[#C8A94D] transition duration-300">Início</a></li>
+                            <li><a href="#portfolio" class="hover:text-[#C8A94D] transition duration-300">Portfólio</a></li>
+                            <li><a href="#blog" class="hover:text-[#C8A94D] transition duration-300">Blog</a></li>
+                            <li><a href="#shop" class="hover:text-[#C8A94D] transition duration-300">Loja Digital</a></li>
+                            <li><a href="#contact" class="hover:text-[#C8A94D] transition duration-300">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 gold-text">Serviços</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-[#C8A94D] transition duration-300">Web Design</a></li>
+                            <li><a href="#" class="hover:text-[#C8A94D] transition duration-300">Fotos com IA</a></li>
+                            <li><a href="#" class="hover:text-[#C8A94D] transition duration-300">Conteúdo Digital</a></li>
+                            <li><a href="#" class="hover:text-[#C8A94D] transition duration-300">Consultoria</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4 gold-text">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-[#C8A94D] transition duration-300">Termos de Uso</a></li>
+                            <li><a href="#" class="hover:text-[#C8A94D] transition duration-300">Política de Privacidade</a></li>
+                            <li><a href="#" class="hover:text-[#C8A94D] transition duration-300">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-[#1A1A1A] mt-12 pt-8 text-center gray-text">
+                <p>© <span id="current-year"></span> Felipe Ribeiro Portfolio. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Portfolio Modal -->
+    <div id="portfolio-modal" class="modal fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+        <div class="bg-opacity-50 dark:bg-[#0E0E0E] light:bg-white rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h3 id="modal-title" class="text-2xl font-bold"></h3>
+                        <p id="modal-description" class="gray-text"></p>
+                    </div>
+                    <button id="close-modal" class="text-2xl hover:text-[#C8A94D] transition duration-300">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <img id="modal-image" src="" alt="" class="w-full h-auto rounded-lg mb-6">
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" 
+                         alt="Project Detail" 
+                         class="w-full h-32 object-cover rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                         alt="Project Detail" 
+                         class="w-full h-32 object-cover rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                         alt="Project Detail" 
+                         class="w-full h-32 object-cover rounded-lg">
+                </div>
+                
+                <div class="mb-6">
+                    <h4 class="text-xl font-bold mb-3 gold-text">Detalhes do Projeto</h4>
+                    <p class="gray-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+                
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h4 class="text-lg font-bold mb-2 gold-text">Tecnologias Utilizadas</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#1A1A1A] rounded-full text-sm">HTML</span>
+                            <span class="px-3 py-1 bg-[#1A1A1A] rounded-full text-sm">CSS</span>
+                            <span class="px-3 py-1 bg-[#1A1A1A] rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-[#1A1A1A] rounded-full text-sm">Photoshop</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn gold-bg text-black px-6 py-2 rounded-full hover:bg-transparent hover:text-[#C8A94D] hover:border-[#C8A94D] border border-transparent transition duration-300">
+                        Quero um Projeto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        const body = document.body;
+        
+        // Check for saved user preference, if any, on load of the website
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun text-xl"></i>';
+            if (mobileThemeToggle) {
+                mobileThemeToggle.innerHTML = '<i class="fas fa-sun text-xl"></i>';
+            }
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            toggleTheme();
+        });
+        
+        if (mobileThemeToggle) {
+            mobileThemeToggle.addEventListener('click', () => {
+                toggleTheme();
+            });
+        }
+        
+        function toggleTheme() {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-sun text-xl"></i>';
+                if (mobileThemeToggle) {
+                    mobileThemeToggle.innerHTML = '<i class="fas fa-sun text-xl"></i>';
+                }
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-moon text-xl"></i>';
+                if (mobileThemeToggle) {
+                    mobileThemeToggle.innerHTML = '<i class="fas fa-moon text-xl"></i>';
+                }
+            }
+        }
+        
+        // Portfolio Filter
+        const filterButtons = document.querySelectorAll('[data-filter]');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('bg-[#C8A94D]', 'text-black', 'active-filter'));
+                
+                // Add active class to clicked button
+                button.classList.add('bg-[#C8A94D]', 'text-black', 'active-filter');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Portfolio Modal
+        const modal = document.getElementById('portfolio-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const modalImage = document.getElementById('modal-image');
+        const closeModal = document.getElementById('close-modal');
+        const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
+        
+        viewDetailsButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const title = button.getAttribute('data-title');
+                const description = button.getAttribute('data-description');
+                const image = button.getAttribute('data-image');
+                
+                modalTitle.textContent = title;
+                modalDescription.textContent = description;
+                modalImage.src = image;
+                modalImage.alt = title;
+                
+                modal.classList.remove('opacity-0', 'invisible');
+                modal.classList.add('opacity-100', 'visible');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('opacity-100', 'visible');
+            modal.classList.add('opacity-0', 'invisible');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('opacity-100', 'visible');
+                modal.classList.add('opacity-0', 'invisible');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Current Year in Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                    
+                    // Scroll to target
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
