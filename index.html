@@ -117,20 +117,20 @@
     </style>
     <style>
   .logos-slide {
-  display: flex;
-  width: max-content;
-  animation: scroll 30s linear infinite;
-  padding-left: 100%; /* move a faixa inicial para fora da tela */
-}
+    display: flex;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+    padding-left: 100%;
+  }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
-  100% {
-    transform: translateX(-100%);
-  }
-}
 
   .logo-item {
     width: 80px;
@@ -237,20 +237,25 @@
     </section>
 
     <!-- Social Proof -->
-    <section class="py-12 dark:bg-[#1A1A1A]">
+    <section class="py-12 bg-[#0E0E0E]">
   <div class="container mx-auto px-6">
     <p class="text-center text-[#8C8C8C] mb-8">
       Marcas que já confiaram em meu trabalho:
     </p>
     <div class="logos-container overflow-hidden relative px-8">
-  <div class="logos-slide flex gap-8">
-        <!-- PRIMEIRO BLOCO -->
+      <div class="logos-slide">
         <img src="./imagens/transfuturo.jpg" alt="Nails Design" class="logo-item">
         <img src="./imagens/labelle.jpg" alt="Lash Studio" class="logo-item">
         <img src="./imagens/postobarramansa.jpg" alt="Transportes" class="logo-item">
         <img src="./imagens/renascer.jpg" alt="Comércio" class="logo-item">
         <img src="./imagens/coliseu.jpg" alt="Restaurante" class="logo-item">
-        <!-- DUPLICADO -->
+        <!-- DUPLICADO para loop infinito -->
+        <img src="./imagens/transfuturo.jpg" alt="Nails Design" class="logo-item">
+        <img src="./imagens/labelle.jpg" alt="Lash Studio" class="logo-item">
+        <img src="./imagens/postobarramansa.jpg" alt="Transportes" class="logo-item">
+        <img src="./imagens/renascer.jpg" alt="Comércio" class="logo-item">
+        <img src="./imagens/coliseu.jpg" alt="Restaurante" class="logo-item">
+          <!-- DUPLICADO para loop infinito -->
         <img src="./imagens/transfuturo.jpg" alt="Nails Design" class="logo-item">
         <img src="./imagens/labelle.jpg" alt="Lash Studio" class="logo-item">
         <img src="./imagens/postobarramansa.jpg" alt="Transportes" class="logo-item">
