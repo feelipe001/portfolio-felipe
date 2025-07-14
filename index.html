@@ -116,16 +116,17 @@
         }
     </style>
     <style>
-  @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+  .logos-slide {
+    animation: scroll 20s linear infinite;
   }
-  .floating {
-    animation-name: float;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 </style>
 </head>
@@ -217,15 +218,25 @@
     </section>
 
     <!-- Social Proof -->
-    <section class="py-12 bg-opacity-50 dark:bg-[#1A1A1A] light:bg-[#F8F8F8]">
+    <section class="py-12 dark:bg-[#1A1A1A]">
   <div class="container mx-auto px-6">
-    <p class="text-center gray-text mb-8">Marcas que já confiaram em meu trabalho:</p>
-    <div class="flex flex-wrap justify-center items-center gap-8">
-      <img src="./imagens/transfuturo.jpg" alt="Nails Design" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300 floating style="animation-delay: 0s;">
-      <img src="./imagens/labelle.jpg" alt="Lash Studio" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300 floating style="animation-delay: 0.5s;">
-      <img src="./imagens/postobarramansa.jpg" alt="Transportes" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300 floating style="animation-delay: 1s;">
-      <img src="./imagens/renascer.jpg" alt="Comércio" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300 floating style="animation-delay: 1.5s;">
-      <img src="./imagens/coliseu.jpg" alt="Restaurante" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300 floating style="animation-delay: 2s;">
+    <p class="text-center text-[#8C8C8C] mb-8">
+      Marcas que já confiaram em meu trabalho:
+    </p>
+    <div class="overflow-hidden">
+      <div class="logos-slide flex gap-8">
+        <img src="./imagens/transfuturo.jpg" alt="Nails Design" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300">
+        <img src="./imagens/labelle.jpg" alt="Lash Studio" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300">
+        <img src="./imagens/postobarramansa.jpg" alt="Transportes" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300">
+        <img src="./imagens/renascer.jpg" alt="Comércio" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300">
+        <img src="./imagens/coliseu.jpg" alt="Restaurante" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300">
+        <!-- DUPLICA AS IMAGENS PARA LOOP INFINITO -->
+        <img src="./imagens/transfuturo.jpg" alt="Nails Design" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300">
+        <img src="./imagens/labelle.jpg" alt="Lash Studio" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300">
+        <img src="./imagens/postobarramansa.jpg" alt="Transportes" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300">
+        <img src="./imagens/renascer.jpg" alt="Comércio" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300">
+        <img src="./imagens/coliseu.jpg" alt="Restaurante" class="w-20 h-20 rounded-full object-cover border-2 border-[#C8A94D] opacity-70 hover:opacity-100 transition duration-300">
+      </div>
     </div>
   </div>
 </section>
